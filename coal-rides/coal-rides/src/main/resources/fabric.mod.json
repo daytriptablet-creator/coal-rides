@@ -1,0 +1,21 @@
+{
+	"schemaVersion": 1,
+	"id": "coalrides",
+	"version": "${version}",
+	"name": "Coal Rides",
+	"description": "Fuel boats and minecarts with coal. Sit in, they drive themselves, fast.",
+	"authors": ["you"],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.coalrides.CoalRides"],
+		"client": ["com.coalrides.CoalRidesClient"]
+	},
+	"mixins": ["coalrides.mixins.json"],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
