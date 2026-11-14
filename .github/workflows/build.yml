@@ -14,6 +14,14 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 9.5.1
+      - name: Apply update files
+        run: |
+          set -e
+          UPD=$(find coal-rides-update -type d -path '*/src/main/java' | head -1)
+          test -n "$UPD"
+          for d in $(find coal-rides -type d -path '*/src/main/java'); do
+            cp -r "$UPD"/. "$d"/
+          done
       - name: Build
         run: |
           cd "$(dirname "$(find . -name build.gradle | head -1)")"
